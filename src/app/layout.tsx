@@ -27,7 +27,7 @@ export default async function RootLayout({
       // Not required, but good for SEO
       lang="ja"
       // Required to be set
-      dir="ltr"
+      // dir="ltr"
       // Suggested by `next-themes` package https://github.com/pacocoursey/next-themes#with-app
       suppressHydrationWarning
     >
