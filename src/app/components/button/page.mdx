@@ -1,0 +1,117 @@
+---
+title: ボタン
+---
+
+# ボタン
+
+ボタンは、ユーザーアクションをトリガーするための基本的なインタラクティブコンポーネントです。
+
+## 基本的な使い方
+
+```tsx
+import { Button } from "@/components/Button";
+
+export default function Example() {
+  return <Button>クリックしてください</Button>;
+}
+```
+
+## バリエーション
+
+ボタンには 4 つのバリエーションがあります：
+
+- `filled`: 塗りつぶしスタイル（デフォルト）
+- `outlined`: アウトラインスタイル
+- `tonal`: トーン付きスタイル
+- `text`: テキストのみのスタイル
+
+```tsx
+<Button variant="filled">塗りつぶし</Button>
+<Button variant="outlined">アウトライン</Button>
+<Button variant="tonal">トーン付き</Button>
+<Button variant="text">テキストのみ</Button>
+```
+
+## サイズ
+
+ボタンには 3 つのサイズがあります：
+
+- `sm`: 小さいサイズ
+- `md`: 中サイズ（デフォルト）
+- `lg`: 大きいサイズ
+
+```tsx
+<Button size="sm">小さい</Button>
+<Button size="md">中</Button>
+<Button size="lg">大きい</Button>
+```
+
+## 角丸
+
+ボタンの角丸の大きさを設定できます：
+
+- `sm`: 小さい角丸
+- `md`: 中程度の角丸（デフォルト）
+- `lg`: 大きい角丸（丸型）
+
+```tsx
+<Button round="sm">小さい角丸</Button>
+<Button round="md">中程度の角丸</Button>
+<Button round="lg">丸型</Button>
+```
+
+## ローディング状態
+
+ボタンにローディング状態を追加できます：
+
+```tsx
+<Button isLoading>ローディング中</Button>
+<Button isLoading loadingText="送信中...">送信</Button>
+```
+
+## アイコン付きボタン
+
+ボタンの前後にアイコンやコンテンツを追加できます：
+
+```tsx
+<Button startContent={<Icon />}>アイコン付き</Button>
+<Button endContent={<Icon />}>後ろにアイコン</Button>
+```
+
+## カスタマイズ
+
+### 幅と高さ
+
+ボタンの幅と高さをカスタマイズできます：
+
+```tsx
+<Button width="200px">固定幅</Button>
+<Button height="60px">固定高さ</Button>
+```
+
+### 配置
+
+ボタン内のコンテンツの配置を調整できます：
+
+```tsx
+<Button align="start">左寄せ</Button>
+<Button align="center">中央寄せ（デフォルト）</Button>
+<Button align="end">右寄せ</Button>
+<Button align="space-between">両端寄せ</Button>
+```
+
+## Props
+
+| プロパティ   | 型                                              | デフォルト値  | 説明                             |
+| ------------ | ----------------------------------------------- | ------------- | -------------------------------- |
+| variant      | 'filled' \| 'outlined' \| 'tonal' \| 'text'     | 'filled'      | ボタンのスタイルバリエーション   |
+| color        | ColorProps                                      | 'dominant'    | ボタンの色                       |
+| size         | SizeProps                                       | 'md'          | ボタンのサイズ                   |
+| round        | SizeProps                                       | 'md'          | 角丸の大きさ                     |
+| isLoading    | boolean                                         | false         | ローディング状態                 |
+| loadingText  | string                                          | -             | ローディング中のテキスト         |
+| startContent | ReactNode                                       | -             | ボタンの先頭に表示するコンテンツ |
+| endContent   | ReactNode                                       | -             | ボタンの末尾に表示するコンテンツ |
+| width        | string                                          | 'fit-content' | ボタンの幅                       |
+| height       | string                                          | 'fit-content' | ボタンの高さ                     |
+| align        | 'start' \| 'center' \| 'end' \| 'space-between' | 'center'      | コンテンツの配置                 |
